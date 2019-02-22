@@ -1,0 +1,86 @@
+if (typeof String.prototype.startsWith != 'function') {
+    	  String.prototype.startsWith = function (str){
+    	    return this.slice(0, str.length) == str;
+    	  };
+}
+
+//var port = chrome.runtime.connect();
+//
+//window.addEventListener("message", function(event) {
+//    // We only accept messages from ourselves
+//    if (event.source != window)
+//      return;
+//
+//    if (event.data.type && (event.data.type == "FROM_PAGE")) {
+//      console.log("Content script received: " + event.data.text);
+//      port.postMessage(event.data.text);
+//    }
+//}, false);
+
+var pistonheadsOnClickListenerAdded = false;
+var autotraderOnClickListenerAdded = false;
+
+      // Called when the url of a tab changes.
+      function checkForValidUrl(tabId, changeInfo, tab) {
+    	  if(changeInfo.status == "loading" ) {
+      	    if (tab.url.startsWith("http://www.pistonheads.com/classifieds") ||
+      	    	tab.url.startsWith("file:///Users/palako/Documents/workspace/Pistonheads%20classifieds%20chrome%20extension/test/")) {
+	        	chrome.tabs.executeScript(tab.id, {code: 
+	        		"var x = document.getElementById(\"advert-wrapper-leaderboard\");" +
+	        		"if(x!=null)x.parentNode.removeChild(x);" +
+	        		"x = document.getElementById(\"advert-wrapper-mpu\");" +
+	        		"if(x!=null)x.parentNode.removeChild(x);"
+	        	});
+	        }
+    	  }
+    	  if(changeInfo.status == "complete" ) {
+	        if (tab.url.startsWith("http://www.pistonheads.com/classifieds") ||
+	        	tab.url.startsWith("file:///Users/palako/Documents/workspace/Pistonheads%20classifieds%20chrome%20extension/test/")) {
+	        	chrome.tabs.executeScript(tab.id, {code: 
+	        		"var x = document.getElementById(\"advert-wrapper-leaderboard\");" +
+	        		"if(x!=null)x.parentNode.removeChild(x);" +
+	        		"x = document.getElementById(\"advert-wrapper-mpu\");" +
+	        		"if(x!=null)x.parentNode.removeChild(x);"
+	        	});
+	        	
+	          // ... show the page action.
+	          chrome.pageAction.show(tabId);
+	          if(!pistonheadsOnClickListenerAdded) {
+		          chrome.pageAction.onClicked.addListener(
+					function(tab) {
+						chrome.tabs.insertCSS({file: "smartcharts.css"});
+						chrome.tabs.executeScript(tab.id, {file: "raphael-min.js"});
+						chrome.tabs.executeScript(tab.id, {file: "pistonheads.js"}, function() {
+							chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"});
+						});
+//						chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"}, function() {
+							//var port = chrome.tabs.connect(tab.id);
+							//console.log(document.getElementById("testdiv"));
+							//port.postMessage(document.getElementById("testdiv").outerHTML);
+//						});
+		        	}
+				  );
+		          pistonheadsOnClickListenerAdded=true;
+	          }
+	        } else if (tab.url.startsWith("http://www.autotrader.co.uk/search/used/cars/")) {
+	        	// ... show the page action.
+		          chrome.pageAction.show(tabId);
+		          if(!autotraderOnClickListenerAdded) {
+			          chrome.pageAction.onClicked.addListener(
+						function(tab) {
+							chrome.tabs.insertCSS({file: "smartcharts.css"});
+							chrome.tabs.executeScript(tab.id, {file: "raphael-min.js"});
+							chrome.tabs.executeScript(tab.id, {file: "autotrader.js"}, function() {
+								chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"});
+							});
+			        	}
+					  );
+			          autotraderOnClickListenerAdded=true;
+		          }
+	        }
+    	  }
+      };
+
+      // Listen for any changes to the URL of any tab.
+      chrome.tabs.onUpdated.addListener(checkForValidUrl);
+      

@@ -1,0 +1,463 @@
+﻿/* PH only features */
+
+.advert-body .summary .phone,
+.seller-info .summary .email-link,
+.seller-info .summary .phone-safe,
+.ssi-header-nav input.trans-action,
+.ssi-form .footer input.trans-action,
+.ssi-form .footer input.trans-action,
+.ssi-header-nav a.btn,
+.ssi-form .footer a.btn
+{
+	background-color: #598000; 
+    background-image: url(../images/button-bg-01.gif); 
+    background-position: left -2px;
+    background-repeat:repeat-x;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #86b900 0%, #598000 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #86b900 0%, #598000 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #86b900 0%, #598000 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #86b900), color-stop(1, #598000));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #86b900 0%, #598000 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #86b900 0%, #598000 100%);
+	
+	border-radius: 5px;
+	border: #5a8200 1px solid;	
+	height:auto;
+	padding:0px;
+	width:155px;
+}
+.advert-body .summary .phone,
+.seller-info .summary .phone-safe
+{
+	font-size: 1.5em;
+}
+
+.advert-body .summary .phone span,
+.seller-info .summary .email-link a,
+.seller-info .summary .phone-safe span
+{
+	border-left:none;
+	padding: 8px 0px 8px 22px;
+	width:auto;
+}
+.advert-body .summary .phone span
+{
+	background: url("../images/contact-icons-01.gif") no-repeat 1px 6px;
+}
+.seller-info .summary .email-link a, .seller-info .summary .email-link a:visited
+{
+	display:inline-block;
+	color:#fff !important;
+	background: url("../images/contact-icons-01.gif") no-repeat 0px -38px;
+}
+.seller-info .summary .phone-safe a.phone-safe-link
+{
+	border-right:none;
+    position: relative;
+	left: 16px;
+    top: 3px;
+	background: url("../images/contact-icons.gif") no-repeat 1px -275px;
+}
+
+.ssi-form .ssi-header-nav span.btn,
+.ssi-form .footer span.btn,
+.ssi-form .footer-pre span.btn
+{
+	background:none; 
+	border:none;
+}
+.ssi-form .ssi-header-nav span.btn a,
+.ssi-form .footer span.btn a,
+.ssi-form .footer-pre span.btn a
+{
+	color:#000079;
+	padding-left:10px;
+	background: url("../images/arrow-bk.gif") no-repeat left 6px;
+}
+.ssi-header-nav input.trans-action,
+.ssi-form .footer input.trans-action,
+.ssi-form .footer input.trans-action,
+.ssi-header-nav a.btn,
+.ssi-form .footer a.btn
+{
+	color:#fff;
+	font-weight:bold;
+	width:auto;
+	padding:5px 10px !important;
+	margin-right:5px;
+}
+.ssi-form a.btn:active, .ssi-form a.btn:hover, .ssi-form a.btn:focus, .ssi-form a.btn:visited
+{
+	color:#fff !important;
+}
+.ssi-header-nav a.btn,
+.ssi-form .footer a.btn
+{
+	padding:6px 10px !important;
+}
+.seller-info .summary 
+{
+	width:178px;
+	position:relative;
+	left:-1px;
+	border-left: 1px solid #B4B4B4;
+}
+
+/* Styles for: Enter VRM Fancy Version */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+#adform-fancy {
+    font-family: 'Open Sans', sans-serif;
+}
+#adform-fancy .main-content {
+	width: 987px;
+}
+
+#adform-fancy .ssi-main-content {
+	width: 760px;
+	padding: 18px 0 0 0;
+}
+
+#adform-fancy .ssi-right-nav {
+	width: 225px;
+	padding: 29px 0 0 0;
+}
+/* main content*/
+#adform-fancy{
+	font-family: 'Open Sans', sans-serif;
+}
+#adform-fancy div#car-reg{
+	background: url(../images/ssi/search-bg.jpg);
+	width:750px;
+	height:307px;
+	position:relative;
+	padding-top:30px;
+}
+#adform-fancy.fancy-trade div#car-reg{
+	background: url(../images/ssi/search-bg-trade.jpg);
+}
+#adform-fancy div#car-reg h3{
+	color:#fff;
+	font-size:40px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	line-height:1em;
+	padding: 0px 3px 0 39px;
+	display:inline-block;
+	*display: inline;
+	letter-spacing: -2px;
+}
+#adform-fancy div#car-reg h4{
+	color:#fff;
+	font-size:15px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	line-height:1em;
+	margin: 42px 0 0 355px;
+}
+#adform-fancy div#car-reg a{
+	color:#f7e014;
+	font-size:13px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	line-height:1em;
+}
+#adform-fancy div#car-reg form p#WhatIsThis {
+	float:right;
+    font-weight: bold;
+	margin: 23px 69px 0 0;
+}
+#adform-fancy div#car-reg form p#WhatIsThis a {
+	font-size:11px;
+}
+#adform-fancy div#car-reg input[type="text"]{
+	border: 0 none;
+    font-size: 50px;
+    font-weight: bold;
+    height: 68px;
+    margin-left: 255px;
+    margin-top: 14px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 290px;
+}
+#adform-fancy a.action-med {
+    margin: 15px 0;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 5px;    
+	background-color: #5b8300;
+	font-weight: bold;
+	border: #5b8300 1px solid;
+   	background-image: -webkit-linear-gradient(top, #83b500, #5b8300);
+   	background-image:    -moz-linear-gradient(top, #83b500, #5b8300);
+   	background-image:     -ms-linear-gradient(top, #83b500, #5b8300);
+   	background-image:      -o-linear-gradient(top, #83b500, #5b8300);    
+}
+
+#adform-fancy div#car-reg input[type="submit"] {
+	background:url(../images/ssi/conversionworks/btn-bg.png);
+	border:0;
+	width: 203px;
+	height: 48px;
+	cursor: pointer;
+	float:left;
+	margin: 13px 0 0 217px;
+	color:#fff;
+	font-size:17px !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0 0 9px 0px !important;
+}
+#adform-fancy div#car-reg input[type="submit"]:hover {
+	text-decoration: underline;
+}
+#adform-fancy .field-validation-error{
+	position: absolute;
+	left: 355px;
+	top: 105px;
+	width: 300px;
+}
+
+#adform-fancy div#testimonials {
+	width: 732px;
+	height: 235px;
+	background: #f4f4f4;
+	margin: 10px 0 0 0px;
+	padding: 14px 0 10px;
+}
+
+#adform-fancy div#testimonials h4{
+	color:#0182ca;
+	font-size:18px;
+	font-weight:normal;
+	display:inline;
+	padding: 0 0 0 30px;
+	*float:left;
+
+}
+#adform-fancy div#testimonials span{
+	color:#d7d7d7;
+	float:right;
+	padding: 0 20px 0 0;
+}
+#adform-fancy div#testimonials a{
+	color:#2c2f90;
+	font-size:13px;
+	font-weight:bold;
+	padding: 0 10px;
+}
+
+#adform-fancy hr {
+	background: url(../images/ssi/conversionworks/dotted.png) top left repeat-x;
+	border: 0;
+	clear:both;
+	width:100%;
+	height:1px;
+	margin:13px 0px;
+	*margin:10px 0px;
+	*border-bottom: 1px  dotted #ccc;
+}
+#adform-fancy div#testimonials div.box{
+	width:193px;
+	float:left;
+	margin: 0 20px 0 30px;
+}
+#adform-fancy div#testimonials div.box div.stars{
+	background: url(../images/ssi/conversionworks/stars.jpg) top left no-repeat;
+	height: 20px;
+	width: 114px;
+	margin: 0 0 15px -2px;
+}
+#adform-fancy div#testimonials div.box div.four{
+	background: url(../images/ssi/conversionworks/stars.jpg) top right no-repeat;
+}
+#adform-fancy div#testimonials div.box p{
+	font-family:arial,sans-serif;
+	font-size:13px;
+	color:#2f2f2f;
+}
+#adform-fancy div#testimonials div.box span.author{
+	float:none;
+	display: inline-block;
+	padding: 12px 0;
+	color:#2f2f2f;
+	font-size:14px;
+	font-weight:bold;
+	font-family:arial,sans-serif;
+}
+
+#adform-fancy div.help-box{
+	width:358px;
+	height: 122px;
+	float:left;
+	background-color: #f4f4f4;
+	margin: 20px 20px 20px 0
+
+}
+#adform-fancy p.price-plan {
+	color: #ffffff;
+	float: left;
+	width: 75px;
+	margin-left: 60px;
+	text-align: center;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 1.1em;
+	padding-top: 2px;
+}
+#adform-fancy p.price-plan span.term-val {
+	font-size: 6.2em;
+    line-height: 0.8em;
+	font-weight: bold;
+}
+#adform-fancy p.price-plan span.advert-type {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#adform-fancy div.last{
+	margin-right:0;
+}
+#adform-fancy div.help-box h4{
+	font-size:18px;
+	font-weight:bold;
+	color:#666;
+	padding: 12px 0 0 30px;
+}
+#adform-fancy div.help-box p{
+	font-size:13px;
+	color:#2f2f2f;
+	font-family:arial,sans-serif;
+	padding: 0 30px;
+}
+#adform-fancy div.help-box p a{
+	font-weight:bold;
+	color: #2c2f90;
+}
+#adform-fancy div.help-box span{
+	font-size:16px;
+	color:#666;
+	padding: 0 0 0 30px;
+}
+#adform-fancy div.help-box span span.no{
+	color:#000;
+	font-weight:bold;
+	padding: 0 0 0 15px;
+}
+#adform-fancy div.help-box span span.aligned{
+	padding: 0 0 0 25px;
+}
+#adform-fancy div.help-box span.email-btn{
+	background: url(../images/ssi/conversionworks/btn-email.jpg) top left no-repeat;
+	color: #fff;
+	font-family: arial,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 9px 0 0 35px;
+	width: 69px;
+	height: 35px;
+	display: block;
+	float: right;
+	margin: 0 26px 0 0;
+}
+#adform-fancy div.help-box span.email-btn:hover{
+    text-decoration: underline;
+}
+
+/*right nav*/
+#adform-fancy .ssi-right-nav hr {
+	margin: 0px 0px 10px;
+}
+#adform-fancy .ssi-right-nav h5{
+	font-size:21px;
+	color:#0182ca;
+	font-weight:bold;
+	border-bottom: 2px solid #0182ca;
+	padding: 13px 0 9px;
+	margin: 0 0px 10px 0;
+}
+
+#adform-fancy .ssi-right-nav ul{
+	list-style:none;	
+}
+
+#adform-fancy .ssi-right-nav p, #adform-fancy .ssi-right-nav ul li {
+    color: #2F2F2F; 
+    font-size: 14px;
+}
+
+#adform-fancy .ssi-right-nav ul li{
+	padding: 0 0 15px 26px;
+	background: url(../images/ssi/conversionworks/li-tick.jpg) 0px 4px no-repeat;
+}
+#adform-fancy .ssi-right-nav ul li.one{
+	background: url(../images/ssi/conversionworks/li-1.jpg) 0px 4px no-repeat;
+}
+#adform-fancy .ssi-right-nav ul li.two{
+	background: url(../images/ssi/conversionworks/li-2.jpg) 0px 4px no-repeat;
+}
+#adform-fancy .ssi-right-nav ul li.three{
+	background: url(../images/ssi/conversionworks/li-3.jpg) 0px 4px no-repeat;
+}
+
+#adform-fancy .ssi-right-nav img{
+	padding:4px 0 0 0;
+}
+
+/* TEMP STYLES */
+#adform-fancy span.price-val {
+    clear: both;
+    color: #F7E014;
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#adform-fancy span.seller-type {
+    clear: both;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3em;
+    padding: 6px 10px 10px;
+    width: 100px;
+}
+#adform-fancy.fancy-private span.seller-type {
+	display: none
+}
+
+#adform-fancy a.no-reg-link {
+    margin-right: 70px;
+    float: right;
+	font-size: 12px;
+}
+
+#adform-fancy div.disclosure h4 {
+    font-size: 1.3em;
+    padding-bottom: 5px;
+}
+
+#adform-fancy div.disclosure p {
+    font-size: 1.2em;
+    padding-right: 35px;
+}

@@ -1,0 +1,45 @@
+#smartCharts {
+	position:fixed; 
+	z-index:500; 
+	top:0px; 
+	left:0px; 
+	bottom:0px; 
+	right: 0px; 
+	margin:10px 170px; 
+	border: 1px solid black; 
+	border-radius:5px; 
+	background-color:rgba(255,255,255,0.95); 
+	overflow:scroll;
+}
+
+#navBar {
+	position:relative;
+	border-radius:5px 5px 0px 0px; 
+	border-bottom:1px solid #aaa; 
+	background:-webkit-gradient(linear, center top, center bottom, from(#fff), to(#ccc)); 
+	padding:4px;
+}
+
+#navBar img {
+	position:relative; 
+	width:13px; 
+	height:13px;
+	margin:0px 3px;
+}
+
+#canvas {
+	float:left; 
+	clear:left; 
+	border:1px solid #aaaaaa; 
+	background-color:#ffffff; 
+	margin:10px;
+}
+
+#controlPanel {
+	float:left; 
+	width:200px; 
+	border:1px solid #aaaaaa; 
+	background-color:#ccc; 
+	padding:10px; 
+	margin:10px";
+}

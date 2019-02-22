@@ -1,0 +1,64 @@
+﻿.js-hide {
+    display: none; 
+}
+
+.js-show {
+    display: block; 
+}
+
+.makes-models legend {
+    background-color: #2F2F92;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    padding: 3px 0 3px 10px !important;
+    width: 166px;
+}
+
+.mselect-list 
+{
+    display:none;
+}
+
+.flyout {
+    display: none;
+}
+
+.makes-models .select-makes-models {
+    height: 300px;
+    left: -100000px;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+}
+
+.search-console-right {
+    margin-top: -5px;
+    position: inherit;
+}
+
+.search-console ul.sortable li.visible fieldset
+{
+    z-index:0;
+}
+
+.search-console ul.sortable li.hidden,
+.search-console ul.sortable li.inactive 
+{
+    position: absolute;
+}
+
+.search-console ul.sortable li.visible fieldset.mselect-root
+{
+    z-index:1;
+}
+
+.search-console-right .mf,
+.search-console-right .cf,
+.search-console-right .rf
+{ 
+    visibility:visible
+} 
+
+div.ssi-form div.popout, div.account-view div.popout { display: none; }
+
+div.results-header div.pagination { display: none; }
