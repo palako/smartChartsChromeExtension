@@ -23,9 +23,9 @@ var autotraderOnClickListenerAdded = false;
       // Called when the url of a tab changes.
       function checkForValidUrl(tabId, changeInfo, tab) {
     	  if(changeInfo.status == "loading" ) {
-      	    if (tab.url.startsWith("http://www.pistonheads.com/classifieds") ||
-      	    	tab.url.startsWith("file:///Users/palako/Documents/workspace/Pistonheads%20classifieds%20chrome%20extension/test/")) {
-	        	chrome.tabs.executeScript(tab.id, {code: 
+      	    if (tab.url.startsWith("https://www.pistonheads.com/classifieds") ||
+      	    	tab.url.startsWith("file:///Users/palako/Documents/workspace/SmartChartsChromeExtension/test/")) {
+            	chrome.tabs.executeScript(tab.id, {code: 
 	        		"var x = document.getElementById(\"advert-wrapper-leaderboard\");" +
 	        		"if(x!=null)x.parentNode.removeChild(x);" +
 	        		"x = document.getElementById(\"advert-wrapper-mpu\");" +
@@ -34,8 +34,8 @@ var autotraderOnClickListenerAdded = false;
 	        }
     	  }
     	  if(changeInfo.status == "complete" ) {
-	        if (tab.url.startsWith("http://www.pistonheads.com/classifieds") ||
-	        	tab.url.startsWith("file:///Users/palako/Documents/workspace/Pistonheads%20classifieds%20chrome%20extension/test/")) {
+	        if (tab.url.startsWith("https://www.pistonheads.com/classifieds") ||
+	        	tab.url.startsWith("file:///Users/palako/Documents/workspace/SmartChartsChromeExtension/test/")) {
 	        	chrome.tabs.executeScript(tab.id, {code: 
 	        		"var x = document.getElementById(\"advert-wrapper-leaderboard\");" +
 	        		"if(x!=null)x.parentNode.removeChild(x);" +
@@ -62,7 +62,7 @@ var autotraderOnClickListenerAdded = false;
 				  );
 		          pistonheadsOnClickListenerAdded=true;
 	          }
-	        } else if (tab.url.startsWith("http://www.autotrader.co.uk/search/used/cars/")) {
+	        } else if (tab.url.startsWith("https://www.autotrader.co.uk/search/used/cars/")) {
 	        	// ... show the page action.
 		          chrome.pageAction.show(tabId);
 		          if(!autotraderOnClickListenerAdded) {

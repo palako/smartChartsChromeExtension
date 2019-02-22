@@ -8,6 +8,6 @@
     "default_icon": "favicon.ico",
     "default_title" : "Smart Charts"
   },
-  "permissions": ["tabs", "http://*/*", "file://*"],
+  "permissions": ["tabs", "https://*/*", "file://*"],
   "web_accessible_resources" : ["WebContent/images/close.png", "WebContent/images/minimize.png", "WebContent/images/maximize.png"]
 }
