@@ -1,11 +1,11 @@
 function harvest() {
-	var list=document.evaluate("//ul[@class='result_lv']/li/div", document, null, XPathResult.ANY_TYPE, null);
+	var list=document.evaluate("//div[@id='search-results']/div[@class='result-contain']/div[@class='ad-listing']", document, null, XPathResult.ANY_TYPE, null);
 	while(listItem = list.iterateNext()) {
-		var mileage=document.evaluate("./div[@class='summary']/ul/li[span[text()=\"Mileage: \"]]/span[2]", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
-		if(mileage!=null) mileage = mileage.innerHTML.replace("£","").replace("$","").replace(",","").trim();
-		var price=document.evaluate("./div[@class='contacts-price']/span[@class='ad-price']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		var mileage=document.evaluate("./div[@class='listing-content']/div[@class='listing-info']/ul[@class='specs']/li[1]", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		if(mileage!=null) mileage = mileage.innerText.replace("\"").replace(",", "").trim();
+		var price=document.evaluate("./div[@class='listing-content']/div[@class='listing-info']/div[@class='price-location']/span[@class='price']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if(price!=null) price = price.innerHTML.replace("£","").replace("$","").replace(",","").trim();
-		var headline=document.evaluate("./div[@class='summary']/h4/a[@class='headline-compact']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		var headline=document.evaluate("./div[@class='listing-headline']/a/h3", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
 		var match =headline.innerHTML.match(/.*\(([0-9]{4})\)$/);
 		if(match != null && match.length>0) {
 			year=match[1];
