@@ -6,9 +6,11 @@ function harvest() {
 		var price=document.evaluate("./div[@class='listing-content']/div[@class='listing-info']/div[@class='price-location']/span[@class='price']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if(price!=null) price = price.innerHTML.replace("£","").replace("$","").replace(",","").trim();
 		var headline=document.evaluate("./div[@class='listing-headline']/a/h3", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
-		var match =headline.innerHTML.match(/.*\(([0-9]{4})\)$/);
-		if(match != null && match.length>0) {
-			year=match[1];
+		if(headline != null) {
+			var match =headline.innerHTML.match(/.*\(([0-9]{4})\)$/);
+			if(match != null && match.length>0) {
+				year=match[1];
+			}
 		}
 		if(!isNaN(parseInt(mileage)) && !isNaN(parseInt(price))) {
 			 var car = new Car();

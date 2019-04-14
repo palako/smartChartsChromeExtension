@@ -267,6 +267,7 @@ function renderInfoPanel(smartCharts) {
 }
 
 function showCarDetails(car) {
+    console.log("show car details");
 	panel = document.getElementById("infoPanel");
     if(panel != null) {
     	while (panel.firstChild) {
@@ -337,8 +338,9 @@ function draw() {
     paper.clear();
     paper.path("M"+PAPER_PADDING + " " + (PAPER_HEIGHT-PAPER_PADDING) + "L"+(PAPER_WIDTH-PAPER_PADDING) + " " + (PAPER_HEIGHT-PAPER_PADDING));
     paper.path("M"+PAPER_PADDING + " " + PAPER_PADDING + "L"+PAPER_PADDING + " "+(PAPER_HEIGHT-PAPER_PADDING));
-    var t = paper.text(PAPER_WIDTH-PAPER_PADDING, PAPER_HEIGHT-PAPER_PADDING/2, xAxis).attr({'text-anchor': 'end'});
-    var t = paper.text(PAPER_PADDING/2, PAPER_PADDING, yAxis).rotate(270).attr({'text-anchor': 'end'});
+    paper.text(PAPER_WIDTH-PAPER_PADDING, PAPER_HEIGHT-PAPER_PADDING/2, xAxis).attr({'text-anchor': 'end'});
+    paper.text(PAPER_PADDING/2, PAPER_PADDING, yAxis).rotate(270).attr({'text-anchor': 'end'});
+    
     for(i=0; i<cars.length; i++) {
         var car = cars[i];
         var x = eval("car."+xAxis);
@@ -371,7 +373,6 @@ function draw() {
             circle.attr("stroke", "#365594");
         }
         circle.data("car" , cars[i]); 
-        
         circle.click(function() {showCarDetails(this.data("car"));});
         circle.hover(function() {this.g = this.glow({color:this.attr('fill')});}, function() {this.g.remove();});
     }

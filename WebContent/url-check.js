@@ -19,6 +19,7 @@ if (typeof String.prototype.startsWith != 'function') {
 
 var pistonheadsOnClickListenerAdded = false;
 var autotraderOnClickListenerAdded = false;
+var autotraderCarsOnClickListenerAdded = false;
 
       // Called when the url of a tab changes.
       function checkForValidUrl(tabId, changeInfo, tab) {
@@ -49,33 +50,43 @@ var autotraderOnClickListenerAdded = false;
 		          chrome.pageAction.onClicked.addListener(
 					function(tab) {
 						chrome.tabs.insertCSS({file: "smartcharts.css"});
-						chrome.tabs.executeScript(tab.id, {file: "raphael-min.js"});
+						chrome.tabs.executeScript(tab.id, {file: "raphael.min.js"});
 						chrome.tabs.executeScript(tab.id, {file: "pistonheads.js"}, function() {
 							chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"});
 						});
-//						chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"}, function() {
-							//var port = chrome.tabs.connect(tab.id);
-							//console.log(document.getElementById("testdiv"));
-							//port.postMessage(document.getElementById("testdiv").outerHTML);
-//						});
 		        	}
 				  );
 		          pistonheadsOnClickListenerAdded=true;
 	          }
-	        } else if (tab.url.startsWith("https://www.autotrader.co.uk/search/used/cars/")) {
+	        } else if (tab.url.startsWith("https://www.autotrader.co.uk/car-search")) {
 	        	// ... show the page action.
 		          chrome.pageAction.show(tabId);
 		          if(!autotraderOnClickListenerAdded) {
 			          chrome.pageAction.onClicked.addListener(
 						function(tab) {
 							chrome.tabs.insertCSS({file: "smartcharts.css"});
-							chrome.tabs.executeScript(tab.id, {file: "raphael-min.js"});
+							chrome.tabs.executeScript(tab.id, {file: "raphael.min.js"});
 							chrome.tabs.executeScript(tab.id, {file: "autotrader.js"}, function() {
 								chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"});
 							});
 			        	}
 					  );
 			          autotraderOnClickListenerAdded=true;
+		          }
+	        } else if (tab.url.startsWith("https://www.autotrader.co.uk/cars")) {
+	        	// ... show the page action.
+		          chrome.pageAction.show(tabId);
+		          if(!autotraderCarsOnClickListenerAdded) {
+			          chrome.pageAction.onClicked.addListener(
+						function(tab) {
+							chrome.tabs.insertCSS({file: "smartcharts.css"});
+							chrome.tabs.executeScript(tab.id, {file: "raphael.min.js"});
+							chrome.tabs.executeScript(tab.id, {file: "autotrader-cars.js"}, function() {
+								chrome.tabs.executeScript(tab.id, {file: "smartcharts.js"});
+							});
+			        	}
+					  );
+			          autotraderCarsOnClickListenerAdded=true;
 		          }
 	        }
     	  }

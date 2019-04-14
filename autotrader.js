@@ -1,17 +1,16 @@
-console.log("autotrader.js");
 function harvest() {
-	console.log("harvesting");
-	var list=document.evaluate("//div[@class='resultsWrapper ']/div/div[contains(@class,'searchResult')]", document, null, XPathResult.ANY_TYPE, null);
+	var list=document.evaluate("//ul[@class='search-page__results']/li[@class='search-page__result']", document, null, XPathResult.ANY_TYPE, null);
 	while(listItem = list.iterateNext()) {
-		console.log("found!");
-		var mileage=document.evaluate("./div/div[@class='searchResultAdvert']/div[@class='searchResultBody']/div[@class='searchResultFeatures']/ul/li/span[@class='mileage']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		var mileage=document.evaluate("./article/section[@class='content-column']/div[@class='information-container']/ul[@class='listing-key-specs ']/li[3]", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if(mileage!=null) mileage = mileage.innerHTML.replace(" miles","").trim();
-		var price=document.evaluate("./div/div[@class='searchResultAdvert']/div[@class='searchResultHeader']/div[@class='vehicleTitle']/div[@class='offerPrice']/span[@class='deal-price']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		var price=document.evaluate("./article/section[contains(@class, 'price-column')]/a/div[@class='vehicle-price']", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if(price!=null) price = price.innerHTML.replace("£","").replace("$","").replace(",","").trim();
-		var headline=document.evaluate("./div/div[@class='searchResultAdvert']/div[@class='searchResultHeader']/div[@class='advertIconsPrice']/h3", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
-		var match =headline.innerHTML.match(/^([0-9]{4}).*/);
-		if(match != null && match.length>0) {
-			year=match[1];
+		var headline=document.evaluate("./article/section[@class='content-column']/div[@class='information-container']/ul[@class='listing-key-specs ']/li[1]", listItem, null, XPathResult.ANY_TYPE, null).iterateNext();
+		if(headline!=null) {
+			var match =headline.innerHTML.match(/^([0-9]{4}).*/);
+			if(match != null && match.length>0) {
+				year=match[1];
+			}
 		}
 		if(!isNaN(parseInt(mileage)) && !isNaN(parseInt(price))) {
 			 var car = new Car();
@@ -19,11 +18,8 @@ function harvest() {
 		     if(car.mileage < 200) {
 		    	 car.mileage*=1000;//TODO: This is normally the case, some people say 113 instead of 113,000. False positives (but very few cars) are sold below 200miles
 		     }
-		     console.log("miles:" + car.mileage);
 		     car.price = parseInt(price);
-		     console.log("price:" + car.price);
-			 car.year=year;
-			 console.log("year:" + car.year);
+		     car.year=year;
 			 car.domNode=listItem;
 		     cars.push(car);
 		}			
