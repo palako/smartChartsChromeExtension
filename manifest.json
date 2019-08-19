@@ -1,5 +1,5 @@
 {
-  "manifest_version" : 3,
+  "manifest_version" : 2,
   "name": "Smart Charts",
   "version": "0.2",
   "description": "Smart Charts helps visualizing listing results and compare them intuitively",
